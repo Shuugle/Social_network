@@ -13,14 +13,14 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'home/index.html',
+                templateUrl: 'home/homeIndex.html',
                 controller: 'Home.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'home' }
             })
             .state('account', {
                 url: '/account',
-                templateUrl: 'account/index.html',
+                templateUrl: 'account/accountIndex.html',
                 controller: 'Account.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'account' }
