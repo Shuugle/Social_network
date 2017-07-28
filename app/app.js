@@ -8,7 +8,7 @@
 
     function config($stateProvider, $urlRouterProvider) {
         // default route
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise({redirectTo: '/01-LandingPage'});
 
         $stateProvider
             .state('home', {
@@ -24,7 +24,7 @@
                 controller: 'Account.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'account' }
-            });
+            })
     }
 
     function run($http, $rootScope, $window) {

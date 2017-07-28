@@ -4,13 +4,14 @@ var request = require('request');
 var config = require('config.json');
 
 router.get('/', function (req, res) {
-    // log user out
+    console.log('login', req.session);
+	// log user out
     delete req.session.token;
 
     // move success message into local variable so it only appears once (single read)
     var viewData = { success: req.session.success };
     delete req.session.success;
-
+    console.log(viewData);
     res.render('login', viewData);
 });
 
@@ -31,10 +32,15 @@ router.post('/', function (req, res) {
 
         // save JWT token in the session to make it available to the angular app
         req.session.token = body.token;
-
+        res.sendfile('app/03-Newsfeed.html');
+       // res.redirect('app/03-Newsfeed');
+        
+        //res.render('/03-Newsfeed');
+        
+        
         // redirect to returnUrl
-        var returnUrl = req.query.returnUrl && decodeURIComponent(req.query.returnUrl) || '/';
-        res.redirect(returnUrl);
+       //  var returnUrl = req.query.returnUrl && decodeURIComponent(req.query.returnUrl) || '/';
+       // res.redirect(returnUrl);
     });
 });
 
