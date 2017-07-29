@@ -17,7 +17,6 @@ app.use(session({ secret: config.secret, resave: false, saveUninitialized: true 
 app.use('/api', expressJwt({ secret: config.secret }).unless({ path: ['/api/users/authenticate', '/api/users/register'] }));
 
 // routes
-app.use('/01-LandingPage', require('./controllers/01-LandingPage.controller'));
 app.use('/login', require('./controllers/login.controller'));
 app.use('/register', require('./controllers/register.controller'));
 app.use('/app', require('./controllers/app.controller'));

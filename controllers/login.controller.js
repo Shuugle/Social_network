@@ -32,15 +32,13 @@ router.post('/', function (req, res) {
 
         // save JWT token in the session to make it available to the angular app
         req.session.token = body.token;
-        res.sendfile('app/03-Newsfeed.html');
-       // res.redirect('app/03-Newsfeed');
         
         //res.render('/03-Newsfeed');
         
         
         // redirect to returnUrl
-       //  var returnUrl = req.query.returnUrl && decodeURIComponent(req.query.returnUrl) || '/';
-       // res.redirect(returnUrl);
+         var returnUrl = req.query.returnUrl && decodeURIComponent(req.query.returnUrl) || 'app/03-Newsfeed.html';
+        res.redirect(returnUrl);
     });
 });
 
