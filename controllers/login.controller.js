@@ -6,7 +6,7 @@ var config = require('config.json');
 router.get('/', function (req, res) {
     console.log('login', req.session);
 	// log user out
-    delete req.session.token;
+   // delete req.session.token;
 
     // move success message into local variable so it only appears once (single read)
     var viewData = { success: req.session.success };
