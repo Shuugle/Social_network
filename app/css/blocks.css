@@ -2222,7 +2222,6 @@ body {
     opacity: .8;
     z-index: 500; }
   body.body--fixed {
-    position: fixed;
     width: 100%; }
 
 /*------------- #POPUP-WINDOWS --------------*/
