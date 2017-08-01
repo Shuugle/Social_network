@@ -1,4 +1,4 @@
-﻿var config = require('config.json');
+var config = require('config.json');
 var _ = require('lodash');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
@@ -12,8 +12,8 @@ var service = {};
 service.authenticate = authenticate;
 service.getById = getById;
 service.create = create;
-service.update = update;
-service.delete = _delete;
+//service.update = update;
+//service.delete = _delete;
 
 module.exports = service;
 
@@ -54,6 +54,7 @@ function getById(_id) {
 }
 
 function create(userParam) {
+	console.log(userParam);
     var deferred = Q.defer();
 
     // validation
@@ -88,7 +89,7 @@ function create(userParam) {
 
     return deferred.promise;
 }
-
+/*
 function update(_id, userParam) {
     var deferred = Q.defer();
 
@@ -153,4 +154,4 @@ function _delete(_id) {
         });
 
     return deferred.promise;
-}
+}*/
