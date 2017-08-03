@@ -37,7 +37,7 @@ router.post('/', function (req, res) {
         
         
         // redirect to returnUrl
-         var returnUrl = req.query.returnUrl && decodeURIComponent(req.query.returnUrl) || 'app/03-Newsfeed.html';
+         var returnUrl = req.query.returnUrl && decodeURIComponent(req.query.returnUrl) || 'app/socialNetApp.html';
         res.redirect(returnUrl);
     });
 });
