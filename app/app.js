@@ -26,7 +26,7 @@ routerApp.config(
   
       .state('Newsfeed', {
           url: '/Newsfeed',
-          templateUrl: 'newsFeeds/03-Newsfeed.html',
+          templateUrl: 'newsFeeds/pages/03-Newsfeed.html',
           controller: 'FeedsController'
       });
 
