@@ -89,7 +89,7 @@ function create(userParam) {
 
     return deferred.promise;
 }
-/*
+
 function update(_id, userParam) {
     var deferred = Q.defer();
 
@@ -154,4 +154,4 @@ function _delete(_id) {
         });
 
     return deferred.promise;
-}*/
+}

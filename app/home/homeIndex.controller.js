@@ -1,8 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular
-        .module('app')
+    angular.module('routerApp')
         .controller('Home.IndexController', Controller);
 
     function Controller(UserService) {

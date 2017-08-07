@@ -3,8 +3,16 @@
 <head>
 
 	<title>SocialNet App</title>
+	
+	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="app-content/app.css" rel="stylesheet" /> -->
 
-   
+   	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Main Font -->
 	<script src="js/webfontloader.min.js"></script>
 	<script>
 		WebFont.load({
@@ -34,7 +42,7 @@
 </head>
 <body ng-app="routerApp">
         <main ui-view></main>
-</body>
+
 
   
     <script src="lib/jquery.min.js"></script>
@@ -47,12 +55,13 @@
     <script src="home/homeIndex.controller.js"></script>
     <script src="account/accountIndex.controller.js"></script>
 	<script src="newsFeeds/controllers/FeedsController.js"></script>    
+    <script src="newsFeeds/controllers/ProfilePersonalInfoController.js"></script>
     
     
     
-<!--     jQuery first, then Other JS.
-<script src="js/jquery-3.2.0.min.js"></script> -->
-
+    <!-- jQuery first, then Other JS. -->
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/smooth-scroll.min.js"></script>
 
 <!-- Js effects for material design. + Tooltips -->
 <script src="js/material.min.js"></script>
@@ -82,4 +91,5 @@
 
 <script src="js/mediaelement-and-player.min.js"></script>
 <script src="js/mediaelement-playlist-plugin.min.js"></script>
+</body>
 </html>

@@ -1,8 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular
-        .module('app')
+    angular.module('routerApp')
         .factory('UserService', Service);
 
     function Service($http, $q) {
