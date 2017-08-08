@@ -207,7 +207,7 @@
 						<img alt="author" src="img/author-page.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
-					<a href="#28-YourAccount-PersonalInformation" class="author-name fn">
+					<a href="#28-YourAccount-PersonalInformation/" class="author-name fn">
 						<div class="author-title">
 							James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="icons/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 						</div>
@@ -1763,17 +1763,17 @@ Your Account Personal Information -->
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label" for="firstName">First Name</label>
-									<input class="form-control" placeholder="" type="text" id="firstName" ng-model="vm.user.firstName">
+									<input class="form-control"  type="text" placeholder="" name="firstName" id="firstName" ng-model="vm.user.firstName">
 								</div>
 
 								<div class="form-group label-floating is-empty">
 									<label class="control-label" for="email">Your Email</label>
-									<input class="form-control" placeholder="" id="email" type="email" ng-model="vm.user.email">
+									<input class="form-control" type="email" placeholder="" name="lastName" id="email" ng-model="vm.user.email">
 								</div>
 
 								<div class="form-group date-time-picker label-floating">
 									<label class="control-label" for="datetimepicker">Your Birthday</label>
-									<input name="datetimepicker" id="datetimepickervalue" ng-model="vm.user.datetimepickervalue" />
+									<input name="datetimepicker" type="text" id="datetimepickervalue" ng-model="vm.user.datetimepickervalue" />
 									<span class="input-group-addon">
 										<svg class="olymp-month-calendar-icon icon"><use xlink:href="icons/icons.svg#olymp-month-calendar-icon"></use></svg>
 									</span>
@@ -1783,25 +1783,25 @@ Your Account Personal Information -->
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label" for="lastName">Last Name</label>
-									<input class="form-control" placeholder="" type="text" id="lastName" ng-model="vm.user.lastName">
+									<input class="form-control" placeholder="" type="text" name="lastName" id="lastName" ng-model="vm.user.lastName">
 								</div>
 
 								<div class="form-group label-floating is-empty">
 									<label class="control-label" for="website">Your Website</label>
-									<input class="form-control" placeholder="" type="text" id="website" ng-model="vm.user.website">
+									<input class="form-control" placeholder="" type="text" name="website" id="website" ng-model="vm.user.website">
 								</div>
 
 
 								<div class="form-group label-floating is-empty">
 									<label class="control-label" for="phoneNumber">Your Phone Number</label>
-									<input class="form-control" placeholder="" type="text" id="phoneNumber" ng-model="vm.user.phoneNumber">
+									<input class="form-control" placeholder="" type="text" name="phoneNumber" id="phoneNumber" ng-model="vm.user.phoneNumber">
 								</div>
 							</div>
 
 							<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label" for="country">Your Country</label>
-									<select class="selectpicker form-control" id="country" ng-model="vm.user.country">
+									<select class="selectpicker form-control" id="country" name="country" ng-model="vm.user.country">
 										<option value="US">United States</option>
 										<option value="AU">Australia</option>
 									</select>
@@ -1810,7 +1810,7 @@ Your Account Personal Information -->
 							<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label" for="state">Your State / Province</label>
-									<select class="selectpicker form-control" id="state" ng-model="vm.user.state">
+									<select class="selectpicker form-control" id="state" name="state" ng-model="vm.user.state">
 										<option value="CA">California</option>
 										<option value="TE">Texas</option>
 									</select>
@@ -1819,7 +1819,7 @@ Your Account Personal Information -->
 							<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label" for="city">Your City</label>
-									<select class="selectpicker form-control" id="city" ng-model="vm.user.city">
+									<select class="selectpicker form-control" type="text" name="city" id="city" ng-model="vm.user.city">
 										<option value="SF">San Francisco</option>
 										<option value="NY">New York</option>
 									</select>
@@ -1828,12 +1828,12 @@ Your Account Personal Information -->
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label" for="personalDescription">Write a little description about you</label>
-									<textarea class="form-control" placeholder="" id="personalDescription" type="text" ng-model="vm.user.personalDescription"></textarea>
+									<textarea class="form-control" type="text" placeholder="" name="personalDescription" id="personalDescription" type="text" ng-model="vm.user.personalDescription"></textarea>
 								</div>
 
 								<div class="form-group label-floating is-select">
 									<label class="control-label" for="gender">Your Gender</label>
-									<select class="selectpicker form-control" id="gender" ng-model="vm.user.gender">
+									<select class="selectpicker form-control" name="gender" id="gender" ng-model="vm.user.gender">
 										<option value="Male">Male</option>
 										<option value="Female">Female</option>
 									</select>
@@ -1841,23 +1841,23 @@ Your Account Personal Information -->
 
 								<div class="form-group label-floating is-empty">
 									<label class="control-label" for="religiousBelifs">Religious Belifs</label>
-									<input class="form-control" placeholder="" type="text" id="religiousBelifs" ng-model="vm.user.religiousBelifs">
+									<input class="form-control" placeholder="" type="text" name="religiousBelifs" id="religiousBelifs" ng-model="vm.user.religiousBelifs">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label" for="birthPlace">Your Birthplace</label>
-									<input class="form-control" placeholder="" type="text" id="birthPlace" ng-model="vm.user.birthPlace">
+									<input class="form-control" placeholder="" type="text" name="birthPlace" id="birthPlace" ng-model="vm.user.birthPlace">
 								</div>
 
 								<div class="form-group label-floating is-empty">
 									<label class="control-label" for="occupation">Your Occupation</label>
-									<input class="form-control" placeholder="" type="text" id="occupation" ng-model="vm.user.occupation">
+									<input class="form-control" placeholder="" type="text" name="occupation" id="occupation" ng-model="vm.user.occupation">
 								</div>
 
 								<div class="form-group label-floating is-select">
 									<label class="control-label" for="status">Status</label>
-									<select class="selectpicker form-control" id="status" ng-model="vm.user.status">
+									<select class="selectpicker form-control" type="text"  name="status" id="status" ng-model="vm.user.status">
 										<option value="Married">Married</option>
 										<option value="Not Married">Not Married</option>
 									</select>
@@ -1865,33 +1865,33 @@ Your Account Personal Information -->
 
 								<div class="form-group label-floating is-empty">
 									<label class="control-label" for="politicalIncline">Political Incline</label>
-									<input class="form-control" placeholder="" type="text" id="politicalIncline" ng-model="vm.user.politicalIncline">
+									<input class="form-control" placeholder="" type="text" name="politicalIncline" id="politicalIncline" ng-model="vm.user.politicalIncline">
 								</div>
 							</div>
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="form-group with-icon label-floating is-empty">
 									<label class="control-label" for="facebookAccount">Your Facebook Account</label>
-									<input class="form-control" type="text" id="facebookAccount" ng-model="vm.user.facebookAccount">
+									<input class="form-control" type="text" name="facebookAccount" id="facebookAccount" ng-model="vm.user.facebookAccount">
 									<i class="fa fa-facebook c-facebook" aria-hidden="true"></i>
 								</div>
 								<div class="form-group with-icon label-floating is-empty">
 									<label class="control-label" for="twitterAccount">Your Twitter Account</label>
-									<input class="form-control" type="text" id="twitterAccount" ng-model="vm.user.twitterAccount">
+									<input class="form-control" type="text" name="twitterAccount" id="twitterAccount" ng-model="vm.user.twitterAccount">
 									<i class="fa fa-twitter c-twitter" aria-hidden="true"></i>
 								</div>
 								<div class="form-group with-icon label-floating is-empty">
 									<label class="control-label" for="rssFeedAccount">Your RSS Feed Account</label>
-									<input class="form-control" type="text" id="rssFeedAccount" ng-model="vm.user.status">
+									<input class="form-control" type="text" name="rssFeedAccount" id="rssFeedAccount" ng-model="vm.user.rssFeedAccount">
 									<i class="fa fa-rss c-rss" aria-hidden="true"></i>
 								</div>
 								<div class="form-group with-icon label-floating is-empty">
 									<label class="control-label" for="dribbleAccount">Your Dribbble Account</label>
-									<input class="form-control" type="text" id="dribbleAccount" ng-model="vm.user.status">
+									<input class="form-control" type="text" name="dribbleAccount" id="dribbleAccount" ng-model="vm.user.dribbleAccount">
 									<i class="fa fa-dribbble c-dribbble" aria-hidden="true"></i>
 								</div>
 								<div class="form-group with-icon label-floating is-empty">
 									<label class="control-label" for="spotifyAccount">Your Spotify Account</label>
-									<input class="form-control" type="text" id="spotifyAccount" ng-model="vm.user.status">
+									<input class="form-control" type="text" name="spotifyAccount" id="spotifyAccount" ng-model="vm.user.spotifyAccount">
 									<i class="fa fa-spotify c-spotify" aria-hidden="true"></i>
 								</div>
 							</div>

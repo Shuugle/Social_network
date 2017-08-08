@@ -6,6 +6,7 @@ var userService = require('services/user.service');
 // routes
 router.post('/authenticate', authenticateUser);
 router.post('/register', registerUser);
+//router.get('/api/users/current', getCurrentUser);
 router.get('/current', getCurrentUser);
 router.put('/:_id', updateUser);
 router.delete('/:_id', deleteUser);
@@ -13,11 +14,12 @@ router.delete('/:_id', deleteUser);
 module.exports = router;
 
 function authenticateUser(req, res) {
-    userService.authenticate(req.body.username, req.body.password)
+    userService.authenticate(req.body.email, req.body.password)
         .then(function (token) {
             if (token) {
+            	console.log("token", token);
                 // authentication successful
-                res.send({ token: token });
+                res.send({token : token});
             } else {
                 // authentication failed
                 res.status(401).send('Username or password is incorrect');
@@ -39,10 +41,12 @@ function registerUser(req, res) {
 }
 
 function getCurrentUser(req, res) {
-    userService.getById(req.user.sub)
+	console.log("getting", req.body);
+    userService.GetCurrent(req.user.sub)
         .then(function (user) {
             if (user) {
                 res.send(user);
+               // res.send(req.session.token);
             } else {
                 res.sendStatus(404);
             }

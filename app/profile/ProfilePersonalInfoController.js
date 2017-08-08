@@ -2,20 +2,20 @@
 	(function () {
 	    'use strict';
 
-	    angular.module('routerApp')
-	        .controller('ProfilePersonalInfoController', Controller);
-	 function Controller($window, UserService, FlashService) {
+	    angular.module('routerApp').controller('ProfilePersonalInfoController', Controller);
+	    
+	 function Controller($window,$http, UserService, FlashService) {
 	        var vm = this;
-
+             console.log(vm);
 	        vm.user = null;
+	        console.log(vm.user);
 	        vm.saveUser = saveUser;
-	        vm.deleteUser = deleteUser;
+	       // vm.deleteUser = deleteUser;
 
 	        initController();
-
 	        function initController() {
-	            // get current user
 	            UserService.GetCurrent().then(function (user) {
+	            	console.log(user);
 	                vm.user = user;
 	            });
 	        }
@@ -24,13 +24,15 @@
 	            UserService.Update(vm.user)
 	                .then(function () {
 	                    FlashService.Success('User updated');
+	                     console.log("updated successfully");
 	                })
 	                .catch(function (error) {
 	                    FlashService.Error(error);
+	                    console.log(error);
 	                });
 	        }
 
-	        function deleteUser() {
+	   /*     function deleteUser() {
 	            UserService.Delete(vm.user._id)
 	                .then(function () {
 	                    // log user out
@@ -39,8 +41,8 @@
 	                .catch(function (error) {
 	                    FlashService.Error(error);
 	                });
-	        }
-	    }
+	        }*/
+	    };
 	})();
 	
 //}]);

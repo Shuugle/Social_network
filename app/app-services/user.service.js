@@ -19,6 +19,7 @@
 
         function GetCurrent() {
             return $http.get('/api/users/current').then(handleSuccess, handleError);
+            console.log(GetCurrent);
         }
 
         function GetAll() {
@@ -27,6 +28,7 @@
 
         function GetById(_id) {
             return $http.get('/api/users/' + _id).then(handleSuccess, handleError);
+            console.log(GetById);
         }
 
         function GetByUsername(username) {

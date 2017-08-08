@@ -1,7 +1,8 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('routerApp')
+    angular
+        .module('routerApp')
         .controller('Account.IndexController', Controller);
 
     function Controller($window, UserService, FlashService) {
