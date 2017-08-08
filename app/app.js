@@ -26,13 +26,13 @@ routerApp.config(
   
       .state('Newsfeed', {
           url: '/Newsfeed',
-          templateUrl: 'newsFeeds/pages/03-Newsfeed.html',
+          templateUrl: 'socialNetAppUser/pages/03-Newsfeed.html',
           controller: 'FeedsController'
       })
       
         .state('YourAccount-PersonalInformation', {
           url: '/YourAccount-PersonalInformation',
-          templateUrl: 'newsFeeds/pages/28-YourAccount-PersonalInformation.html',
+          templateUrl: 'socialNetAppUser/pages/28-YourAccount-PersonalInformation.html',
           controllerAs: 'vm',
           controller: 'ProfilePersonalInfoController'
       })
