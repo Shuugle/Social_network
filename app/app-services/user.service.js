@@ -18,8 +18,9 @@
 
         return service;
 
-        function GetCurrent() {
-            return $http.get('/api/users/current').then(handleSuccess, handleError);
+        function GetCurrent(token) {
+        	console.log('>>>>>>Curr :: ' + token);
+            return $http.get('/api/users/current', { headers : {'Authorization' : token}}).then(handleSuccess, handleError);
             console.log(GetCurrent);
         }
 

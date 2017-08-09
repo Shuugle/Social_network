@@ -30,15 +30,16 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         .state('YourAccount-PersonalInformation', {
           url: '/YourAccount-PersonalInformation',
           templateUrl: 'profile/28-YourAccount-PersonalInformation.html',
-          controller: 'ProfilePersonalInfoController',
-          controllerAs: 'vm',
+          controller: 'ProfilePersonalInfoController'
          // data: { 'YourAccount-PersonalInformation' }
       })
      
     });
 
 routerApp.run(function($http, $rootScope, $window){
-    // add JWT token as default auth header
+
+	console.log('>>>>>>>>>>>>>>>>>' + $window.jwtToken);
+	// add JWT token as default auth header
     $http.defaults.headers.common['Authorization'] = 'Bearer ' + $window.jwtToken;
 
     // update active tab on state change
@@ -52,7 +53,7 @@ $(function () {
     // get JWT token from server
     $.get('/app/token', function (token) {
         window.jwtToken = token;
-
+        console.log('>>>>>>>>>token>>>>>>>>' + token);
         angular.bootstrap(document, ['routerApp']);
     });
 });

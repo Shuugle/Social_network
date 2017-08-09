@@ -1,22 +1,21 @@
-	   routerApp.controller('ProfilePersonalInfoController', Controller);
-	    
-	 function Controller($window,$http, UserService, FlashService) {
+	   routerApp.controller('ProfilePersonalInfoController', function ($window,$http, UserService, FlashService, $scope) {
 	        var vm = this;
-             console.log(vm);
+	        $scope.vm = { };
+            console.log(vm);
 	        vm.user = null;
-	        vm.saveUser = saveUser;
 	       // vm.deleteUser = deleteUser;
 
 	        initController();
 	        function initController() {
-	            UserService.GetCurrent().then(function (user) {
-	            	console.log(user);
+	            UserService.GetCurrent('Bearer ' + $window.jwtToken).then(function (user) {
 	                vm.user = user;
+	                $scope.vm.user = user;
+	                console.log($scope.vm.user );
 	            });
 	        }
 
-	        function saveUser() {
-	            UserService.Update(vm.user)
+	        $scope.saveUser =  function() {
+	            UserService.Update($scope.vm.user)
 	                .then(function () {
 	                    FlashService.Success('User updated');
 	                     console.log("updated successfully");
@@ -37,4 +36,6 @@
 	                    FlashService.Error(error);
 	                });
 	        }*/
-	    };
+	    });
+	    
+
