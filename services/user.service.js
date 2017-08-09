@@ -10,7 +10,6 @@ db.bind('users');
 var service = {};
 
 service.authenticate = authenticate;
-//service.GetCurrent = GetCurrent;
 service.getById = getById;
 service.create = create;
 service.update = update;
@@ -21,14 +20,14 @@ module.exports = service;
 function authenticate(email, password) {
     var deferred = Q.defer();
        console.log("mailpassword", email, password);
+       
     db.users.findOne({ email: email }, function (err, user) {
         if (err) deferred.reject(err.name + ': ' + err.message);
 
         if (user && bcrypt.compareSync(password, user.hash)) {
             // authentication successful
             deferred.resolve(jwt.sign({ sub: user._id }, config.secret));
-            
-        } else {
+            } else {
             // authentication failed
             deferred.resolve();
         }
@@ -37,29 +36,10 @@ function authenticate(email, password) {
     return deferred.promise;
 }
 
-/*function GetCurrent(user) {
-	console.log("id", user)
-    var deferred = Q.defer();
-	console.log("getDeferred", deferred)
-    db.users.find({user:user._id}, function (err, user) {
-        if (err) deferred.reject(err.name + ': ' + err.message);
-
-        if (user) {
-            // return user (without hashed password)
-            deferred.resolve(_.omit(user, 'hash'));
-        } else {
-            // user not found
-            deferred.resolve();
-        }
-    });
-
-    return deferred.promise;
-}*/
-
 function getById(_id) {
-	console.log("id", _id)
+	console.log("id", _id);
     var deferred = Q.defer();
-	console.log("getDeferred", deferred)
+	console.log("getDeferred", deferred);
     db.users.findById(_id, function (err, user) {
         if (err) deferred.reject(err.name + ': ' + err.message);
 
@@ -142,10 +122,28 @@ function update(_id, userParam) {
     function updateUser() {
         // fields to update
         var set = {
-            firstName: userParam.firstName,
-            lastName: userParam.lastName,
-            //username: userParam.username,
-            email   : userParam.email
+            firstName			: userParam.firstName,
+            lastName			: userParam.lastName,
+            email   			: userParam.email,
+            datetimepicker		: userParam.datetimepicker,
+            website   			: userParam.website,
+            phoneNumber  		: userParam.phoneNumber,
+            country   			: userParam.country,
+            state   			: userParam.state,
+            city   				: userParam.city,
+            personalDescription : userParam.personalDescription,
+            gender   			: userParam.gender,
+            religiousBelifs   	: userParam.religiousBelifs,
+            birthPlace   		: userParam.birthPlace,
+            occupation   		: userParam.occupation,
+            maritalStatus   	: userParam.maritalStatus,
+            politicalIncline   	: userParam.politicalIncline,
+            facebookAccount   	: userParam.facebookAccount,
+            twitterAccount   	: userParam.twitterAccount,
+            rssFeedAccount   	: userParam.rssFeedAccount,
+            dribbleAccount   	: userParam.dribbleAccount,
+            spotifyAccount   	: userParam.spotifyAccount
+            
         };
             console.log("set", set)
         // update password if it was entered

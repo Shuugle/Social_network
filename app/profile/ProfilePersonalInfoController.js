@@ -1,14 +1,9 @@
-//routerApp.controller('ProfilePersonalInfoController', ["$scope","$window", "UserService", "FlashService","Controller", function($scope, $window, UserService, FlashService, Controller) {
-	(function () {
-	    'use strict';
-
-	    angular.module('routerApp').controller('ProfilePersonalInfoController', Controller);
+	   routerApp.controller('ProfilePersonalInfoController', Controller);
 	    
 	 function Controller($window,$http, UserService, FlashService) {
 	        var vm = this;
              console.log(vm);
 	        vm.user = null;
-	        console.log(vm.user);
 	        vm.saveUser = saveUser;
 	       // vm.deleteUser = deleteUser;
 
@@ -43,6 +38,3 @@
 	                });
 	        }*/
 	    };
-	})();
-	
-//}]);
