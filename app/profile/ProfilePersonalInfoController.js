@@ -10,12 +10,14 @@
 	            UserService.GetCurrent('Bearer ' + $window.jwtToken).then(function (user) {
 	                vm.user = user;
 	                $scope.vm.user = user;
-	                console.log($scope.vm.user );
+	                console.log($scope.vm.user);
+	               console.log(vm.user);
 	            });
 	        }
 
 	        $scope.saveUser =  function() {
-	            UserService.Update($scope.vm.user)
+	        	console.log("entered");
+	            UserService.Update($scope.vm.user, 'Bearer ' + $window.jwtToken)
 	                .then(function () {
 	                    FlashService.Success('User updated');
 	                     console.log("updated successfully");

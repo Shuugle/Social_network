@@ -41,8 +41,8 @@
             return $http.post('/api/users', user).then(handleSuccess, handleError);
         }
 
-        function Update(user) {
-            return $http.put('/api/users/' + user._id, user).then(handleSuccess, handleError);
+        function Update(user, token) {
+            return $http.put('/api/users/' + user._id, user, { headers : {'Authorization' : token}}).then(handleSuccess, handleError);
         }
 
         function Delete(_id) {
