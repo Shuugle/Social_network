@@ -37,7 +37,6 @@ function authenticate(email, password) {
 }
 
 function getById(_id) {
-	console.log("id", _id);
     var deferred = Q.defer();
 	console.log("getDeferred", deferred);
     db.users.findById(_id, function (err, user) {
